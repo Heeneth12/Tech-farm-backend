@@ -4,7 +4,7 @@ const axios = require("axios");
 const nodemailer = require("nodemailer");
 
 const app = express();
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 9000; // Use environment variable or default to port 9000
 
 app.use(cors());
 app.use(express.json());
@@ -114,6 +114,7 @@ app.get("/api/data", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// Start the server
+const server = app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${server.address().port}`);
 });
