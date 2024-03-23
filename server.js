@@ -56,12 +56,12 @@ app.post("/api/contact", async (req, res) => {
     // Check if rainfall is less than 10 and send email if true
     const transporter = nodemailer.createTransport(config);
 
-    if (formData.rainfall < 40) {
+    if (formData.rainfall < 30) {
       const messages = {
         from: "heeneth123@gmail.com",
         to: "ah8963@srmist.edu.in",
-        subject: "Low Rainfall Alert",
-        text: "The rainfall value is less than 10.",
+        subject: "Low Water Alert",
+        text: "I hope this message finds you well. I regret to inform you that our monitoring systems have detected a concerning decrease in water levels in your agricultural field. This shortage could potentially jeopardize the health and yield of your crops.",
       };
 
       transporter.sendMail(messages, function (error, info) {
