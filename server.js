@@ -56,7 +56,7 @@ app.post("/api/contact", async (req, res) => {
     // Check if rainfall is less than 10 and send email if true
     const transporter = nodemailer.createTransport(config);
 
-    if (formData.rainfall < 10) {
+    if (formData.rainfall < 40) {
       const messages = {
         from: "heeneth123@gmail.com",
         to: "ah8963@srmist.edu.in",
